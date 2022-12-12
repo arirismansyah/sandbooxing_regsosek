@@ -34,12 +34,12 @@ Berikut ini merupakan scipt sandbox untuk explorasi dan identifikasi data hasil 
 
 ### 01 - REKAP ERROR, WARNING, & BLANK PER PETUGAS ENTRI PER WILAYAH
 ```
-SELECT kode_kec, kode_desa, kode_sls,  sls_nama, m_operator.realname, 
+SELECT t_rt.kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, m_operator.realname as nama_operator, 
 SUM (CASE WHEN status_dok = 'E' THEN 1 ELSE 0 END) AS jumlah_error,
 SUM (CASE WHEN status_dok = 'W' THEN 1 ELSE 0 END) AS jumlah_warning,
 SUM (CASE WHEN status_dok = '' THEN 1 ELSE 0 END) AS jumlah_blank
 FROM t_rt, m_operator WHERE m_operator.id_operator = t_rt.kode_operator 
-Group by kode_kec, kode_desa, kode_sls, sls_nama, m_operator.realname
+Group by t_rt.kode_kab, kode_kec, kode_desa, kode_sls, sls_nama, m_operator.realname
 order by realname
 
 ```
