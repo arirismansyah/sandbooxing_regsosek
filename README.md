@@ -43,10 +43,10 @@ Group by t_rt.kode_kab, kode_kec, kode_desa, kode_sls, sls_nama, m_operator.real
 order by realname
 
 ```
-### 01 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI MEMILIKI ASET MOBIL, KAPAL PERAHU MOTOR, ATAU EMAS PERHIASAN
+### 01 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI MEMILIKI ASET MOBIL, KOMPUTER/LAPTOP KAPAL, PERAHU MOTOR, ATAU EMAS PERHIASAN
 ```
-SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r502k as kepemilikan_mobil, r502g as kepemilikan_perhiasan, r502m as kepemilikan_perahu_motor
-FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r502g = 1 OR r502k = 1 OR r502m = 1)
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r502k as kepemilikan_mobil, r502g as kepemilikan_perhiasan, r502h as kepemilikan_laptop, r502m as kepemilikan_perahu_motor
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r502g = 1 OR r502h = 1 OR r502k = 1 OR r502m = 1)
 
 ```
 
@@ -66,6 +66,12 @@ FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r303 = 1)
 ```
 SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r402 as nama_kepala_keluarga, r409, r417, r418
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r418=5)
+
+```
+### 05 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI LUAS BANGUNAN TEMPAT TINGGAL > 100 M2
+```
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r301a, r302 as luas_bangunan_tempat_tinggal
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r302 > 100)
 
 ```
 
