@@ -50,5 +50,24 @@ FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r502k = 1)
 
 ```
 
+### 03 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI IJAZAH KEPALA KELUARGA > S1
+```
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r402 as nama_kepala_keluarga, r409, r415 as ijazah_kepala_keluarga
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r409 = 1) AND (r415 >= 19 AND r415!=23)
+
+```
+### 04 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI LANTAI GRANIT
+```
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r303
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r303 = 1)
+
+```
+### 05 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI PEKERJAAN ART PNS
+```
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r402 as nama_kepala_keluarga, r409, r417, r418
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r418=5)
+
+```
+
 
 
