@@ -45,7 +45,7 @@ order by realname
 ```
 ### 02 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI MEMILIKI ASET MOBIL, KAPAL PERAHU MOTOR, ATAU EMAS PERHIASAN
 ```
-SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r502k as kepemilikan_mobil
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r502k as kepemilikan_mobil, r502g as kepemilikan_perhiasan, r502m as kepemilikan_perahu_motor
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r502g = 1 OR r502k = 1 OR r502m = 1)
 
 ```
