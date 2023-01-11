@@ -76,8 +76,8 @@ FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r302 > 100)
 ```
 ### 06 - KELUARGA MISKIN DENGAN DAYA LISTRIK PADA RUMAH 450 W TAPI MEMILIKI AC
 ```
-SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r307b, r502c as kepemilikan_ac
-FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r307b1 = 1) AND (r502c = 1)
+SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r307b1, r307b2, r307b3, r502c as kepemilikan_ac
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r307b1 = 1 AND (r307b2 IS NULL AND r307b3 IS NULL)) AND (r502c = 1)
 
 ```
 
