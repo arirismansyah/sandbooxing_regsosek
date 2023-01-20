@@ -80,6 +80,18 @@ SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108,
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r307b1 = 1 AND (r307b2 IS NULL AND r307b3 IS NULL)) AND (r502c = 1)
 
 ```
+### 07 - ART WANITA BEUM MENIKAH TAPI SEDANG HAMIL
+```
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r401 as no_art, r402 as nama_art, r405 as jenis_kelamin, r408 as status_perkawinan, r410 as sedang_hamil
+FROM tab_view_k WHERE (r405 = 2 AND r408 = 1) AND (r410 =1)
+
+```
+### 07 - ART BERJENIS KELAMIN SELAIN PRIA ATAU WANITA
+```
+SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r401 as no_art, r402 as nama_art, r405 as jenis_kelamin
+FROM tab_view_k WHERE (r405 != 2 AND r405 1= 1)
+
+```
 
 
 
