@@ -89,7 +89,7 @@ FROM tab_view_k WHERE (r405 = 2 AND r408 = 1) AND (r410 =1)
 ### 08 - ART BERJENIS KELAMIN SELAIN PRIA ATAU WANITA
 ```
 SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r401 as no_art, r402 as nama_art, r405 as jenis_kelamin
-FROM tab_view_k WHERE (r405 != 2 AND r405 1= 1)
+FROM tab_view_k WHERE (r405 != 2 AND r405 1 != 1)
 
 ```
 
