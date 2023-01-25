@@ -45,50 +45,50 @@ order by realname
 ```
 ### 01 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI MEMILIKI ASET MOBIL, KOMPUTER/LAPTOP KAPAL, PERAHU MOTOR, ATAU EMAS PERHIASAN
 ```
-SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r502k as kepemilikan_mobil, r502g as kepemilikan_perhiasan, r502h as kepemilikan_laptop, r502m as kepemilikan_perahu_motor
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r502k as kepemilikan_mobil,r502g as kepemilikan_perhiasan,r502h as kepemilikan_laptop,r502m as kepemilikan_perahu_motor
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r502g = 1 OR r502h = 1 OR r502k = 1 OR r502m = 1)
 
 ```
 
 ### 02 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI IJAZAH KEPALA KELUARGA > S1
 ```
-SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r402 as nama_kepala_keluarga, r409, r415 as ijazah_kepala_keluarga
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r402 as nama_kepala_keluarga,r409, r415 as ijazah_kepala_keluarga
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r409 = 1) AND (r415 >= 19 AND r415!=23)
 
 ```
 ### 03 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI LANTAI GRANIT
 ```
-SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r301a, r303 as lantai
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r301a,r303 as lantai
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r303 = 1)
 
 ```
 ### 04 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI PEKERJAAN ART PNS
 ```
-SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r402 as nama_kepala_keluarga, r409, r417, r418
+SELECT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r402 as nama_kepala_keluarga,r409,r417,r418
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r418=5)
 
 ```
 ### 05 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI LUAS BANGUNAN TEMPAT TINGGAL > 100 M2
 ```
-SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r301a, r302 as luas_bangunan_tempat_tinggal
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r301a,r302 as luas_bangunan_tempat_tinggal
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r302 > 100)
 
 ```
 ### 06 - KELUARGA MISKIN DENGAN DAYA LISTRIK PADA RUMAH 450 W TAPI MEMILIKI AC
 ```
-SELECT DISTINCT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r111 as status_keluarga, r307b1, r307b2, r307b3, r502c as kepemilikan_ac
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r307b1,r307b2,r307b3,r502c as kepemilikan_ac
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r307b1 = 1 AND (r307b2 IS NULL AND r307b3 IS NULL)) AND (r502c = 1)
 
 ```
 ### 07 - ART WANITA BEUM MENIKAH TAPI SEDANG HAMIL
 ```
-SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r401 as no_art, r402 as nama_art, r405 as jenis_kelamin, r408 as status_perkawinan, r410 as sedang_hamil
+SELECT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r401 as no_art,r402 as nama_art,r405 as jenis_kelamin,r408 as status_perkawinan,r410 as sedang_hamil
 FROM tab_view_k WHERE (r405 = 2 AND r408 = 1) AND (r410 =1)
 
 ```
 ### 08 - ART BERJENIS KELAMIN SELAIN PRIA ATAU WANITA
 ```
-SELECT kode_kab, kode_kec, kode_desa, kode_sls,  sls_nama, alamat,r108, nama_kk, r109 as nu_bangunan, r110 as nu_verifikasi, r401 as no_art, r402 as nama_art, r405 as jenis_kelamin
+SELECT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r401 as no_art,r402 as nama_art,r405 as jenis_kelamin
 FROM tab_view_k WHERE (r405 != 2 AND r405 1 != 1)
 
 ```
