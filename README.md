@@ -71,7 +71,7 @@ FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r418=5)
 ### 05 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI LUAS BANGUNAN TEMPAT TINGGAL > 100 M2
 ```
 SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r301a,r302 as luas_bangunan_tempat_tinggal
-FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r302 > 100)
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r301a = 1) AND (r302 > 100)
 
 ```
 ### 06 - KELUARGA MISKIN DENGAN DAYA LISTRIK PADA RUMAH 450 W TAPI MEMILIKI AC
