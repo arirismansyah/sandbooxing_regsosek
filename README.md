@@ -93,5 +93,12 @@ FROM tab_view_k WHERE (r405 != 2 AND r405 1 != 1)
 
 ```
 
+### 09 - STATUS ART MERUPAKAN PASANGAN KEPALA KELUARGA (r409=2) TAPI BELUM MENIKAH (r408=1)
+```
+SELECT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r401 as no_art,r402 as nama_art,r408 as status_perkawinan, r409 as status_hubungan_dgn_kk
+FROM tab_view_k WHERE (r408 = 1 AND r409= 2)
+
+```
+
 
 
