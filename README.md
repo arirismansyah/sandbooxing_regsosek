@@ -59,7 +59,7 @@ FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r409 = 1) AND (r415 >= 19 AND 
 ### 03 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI LANTAI GRANIT
 ```
 SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r301a,r303 as lantai
-FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r303 = 1)
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r301a=1) AND (r303 = 1)
 
 ```
 ### 04 - KELUARGA MISKIN ATAU SANGAT MISKIN TAPI PEKERJAAN ART PNS
