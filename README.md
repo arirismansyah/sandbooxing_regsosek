@@ -100,5 +100,11 @@ FROM tab_view_k WHERE (r408 = 1 AND r409= 2) AND (status_dok = 'W' OR status_dok
 
 ```
 
+### 10 - KELUARGA MISKIN ATAU SANGAT MISKIN, RUMAH MILIK SENDIRI, LISTRIK LEBIH DARI 1300 WATT
+```
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga, r301a as kepemilikan_rumah, r307b1 as listrik, r307b2 as listrik2, r307b3 as listrik3
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r307b1 = 4 or r307b1=5 or r307b2 = 4 or r307b2=5  or r307b3 = 4 or r307b3=5) AND (r301a=1) AND (status_dok = 'W' OR status_dok = 'C')
+
+```
 
 
