@@ -106,5 +106,34 @@ SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_k
 FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r307b1 = 4 or r307b1=5 or r307b2 = 4 or r307b2=5  or r307b3 = 4 or r307b3=5) AND (r301a=1) AND (status_dok = 'W' OR status_dok = 'C')
 
 ```
+### 11 - KELUARGA MISKIN ATAU SANGAT MISKIN SUMBER AIR MINUM UTAMA AIR KEMASAN BERMERK, BAHAN BAKAR MEMASAK LISTRIK, TIDAK MEMASAK
+```
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r306a as air_minum_utama, r308 as bahan_bakar
+FROM tab_view_k WHERE (r111 = 1 OR r111 = 2) AND (r306a= 1 OR 308=1 or 308=0) AND (status_dok = 'W' OR status_dok = 'C')
 
+```
+
+### 12 - KELUARGA TIDAK MISKIN LUAS LANTAI BANGUNAN < 36M2, LANTAI TERLUAS BAMBU, TANAH, LAINNYA, DINDING TERLUAS ANYAMAN KAYU, BATANG KAYU, BAMBU, ATAP TERLUAS BAMBU, KAYU SIRAP, JERAMI, LAINNYA
+```
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r302 as luas_lantai, r303 as jenis_lantai, r304 as jenis_dinding, r305 as jenis_atap
+FROM tab_view_k WHERE (r111 =3) AND (r302<36 OR (R303>6 AND r303<10) OR (R304>3 AND R304<8 ) OR (r305>4 and r305<9)) AND (status_dok = 'W' OR status_dok = 'C')
+```
+
+### 13 - KELUARGA TIDAK MISKIN SUMBER AIR MINUM UTAMA MATA AIR TAK TERLINDUNG, AIR PERMUKAAN, AIR HUJAN, LISTRIK 450 WATT, BAHAN BAKAR MEMASAK MINYAK TANAH, BRIKET, ARANG, KAYU BAKAR
+```
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r306a as air_minum, r307b1 as daya_listrik, r308 as bahan_bakar_memasak
+FROM tab_view_k WHERE (r111 =3) AND ((r306a>7 and r306a<12) OR (r307b1=1 AND r307b2='' AND r307b3='') OR(r308>6 AND r308<11)) AND (status_dok = 'W' OR status_dok = 'C')
+```
+
+### 14 - KELUARGA TIDAK MISKIN TAPI KLOSET KODE 4-6
+```
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r309a as fasilitas_tempat_bab
+FROM tab_view_k WHERE (r111 =3) AND (r309a=4 OR r309a=5 OR r309a=6 ) AND (status_dok = 'W' OR status_dok = 'C') 
+```
+
+### 15 - KELUARGA TIDAK MISKIN TAPI PUNYA PBI JKN
+```
+SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r431a as jaminan_kesehatan
+FROM tab_view_k WHERE (r111 =3) AND (r431a ='01' OR r431a ='1' ) AND (status_dok = 'W' OR status_dok = 'C')
+```
 
