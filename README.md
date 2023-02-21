@@ -122,7 +122,7 @@ FROM tab_view_k WHERE (r111 =3) AND (r302<36 OR (R303>6 AND r303<10) OR (R304>3 
 ### 13 - KELUARGA TIDAK MISKIN SUMBER AIR MINUM UTAMA MATA AIR TAK TERLINDUNG, AIR PERMUKAAN, AIR HUJAN, LISTRIK 450 WATT, BAHAN BAKAR MEMASAK MINYAK TANAH, BRIKET, ARANG, KAYU BAKAR
 ```
 SELECT DISTINCT kode_kab,kode_kec,kode_desa,kode_sls,sls_nama,alamat,r108,nama_kk,r109 as nu_bangunan,r110 as nu_verifikasi,r111 as status_keluarga,r306a as air_minum, r307b1 as daya_listrik, r308 as bahan_bakar_memasak
-FROM tab_view_k WHERE (r111 =3) AND ((r306a>7 and r306a<12) OR (r307b1=1 AND r307b2='' AND r307b3='') OR(r308>6 AND r308<11)) AND (status_dok = 'W' OR status_dok = 'C')
+FROM tab_view_k WHERE (r111 =3) AND ((r306a>7 and r306a<12) OR (r307b1='1' AND r307b2='' AND r307b3='') OR(r308>'6' AND r308<'11')) AND (status_dok = 'W' OR status_dok = 'C')
 ```
 
 ### 14 - KELUARGA TIDAK MISKIN TAPI KLOSET KODE 4-6
